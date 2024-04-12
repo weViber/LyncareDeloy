@@ -14,19 +14,21 @@ app.use(express.urlencoded({ extended: true }))
 
 const apiRouter = require('./src/routes/index');
 
+
+app.get("/", (req, res) => res.send("Express on Vercel"));
+
+app.use('/api', apiRouter)
+
 mongo
     .connectToDatabase()
     .then(() => {
         app.listen(PORT, () => {
             console.log(`API listening on PORT ${PORT}`)
         })
-
     })
     .catch((error) => {
         console.error('Failed to connect to MongoDB:', error)
         throw error
     })
-
-app.use('/api', apiRouter)
 
 module.exports = app
