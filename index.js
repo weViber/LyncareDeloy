@@ -38,6 +38,4 @@ app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, 'src/build', 'index.html'));
 });
 
-
-// Export the Express API
 module.exports = app
