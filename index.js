@@ -14,9 +14,6 @@ app.use(express.urlencoded({ extended: true }))
 
 const apiRouter = require('./src/routes/index');
 
-app.use(express.static(path.join(__dirname, 'src/build')));
-app.use(express.static(path.join(__dirname, '/public')));
-
 mongo
     .connectToDatabase()
     .then(() => {
