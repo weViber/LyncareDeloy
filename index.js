@@ -30,14 +30,6 @@ mongo
         throw error
     })
 
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'src/build', 'index.html'));
-});
-
 app.use('/api', apiRouter)
-
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'src/build', 'index.html'));
-});
 
 module.exports = app
