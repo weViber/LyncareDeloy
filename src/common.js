@@ -8,6 +8,8 @@ const OPENAI_KEY = process.env.OPENAI_KEY;
 const EMAIL_SERVICE = process.env.EMAIL_SERVICE;
 const EMAIL_USER = process.env.EMAIL_USER;
 const EMAIL_PASSWORD = process.env.EMAIL_PASSWORD;
+const RECAPTCHA_SECRET_KEY = process.env.RECAPTCHA_SECRET_KEY;
+const RECAPTCHA_MIN_SCORE = parseFloat(process.env.RECAPTCHA_MIN_SCORE || "0.5");
 
 const APP_CONFIG_JSON = JSON.stringify({
     PORT,
@@ -33,5 +35,7 @@ module.exports = {
     EMAIL_SERVICE,
     EMAIL_USER,
     EMAIL_PASSWORD,
+    RECAPTCHA_SECRET_KEY,
+    RECAPTCHA_MIN_SCORE,
     APP_CONFIG_JSON,
 };
