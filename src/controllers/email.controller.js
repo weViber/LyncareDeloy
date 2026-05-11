@@ -77,6 +77,7 @@ exports.postEmail = async (req, res) => {
     await newContact.save();
     res.status(200).json({ message: "Success" });
   } catch (error) {
-    console.log(error);
+    console.error("postEmail error:", error);
+    res.status(500).json({ message: "메일 전송 중 오류가 발생했습니다. 잠시 후 다시 시도해주세요." });
   }
 };
